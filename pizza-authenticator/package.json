@@ -1,0 +1,13 @@
+{
+  "name": "showcase-experiments",
+  "version": "1.0.0",
+  "description": "Example project for experiments",
+  "main": "index.js",
+  "scripts": {
+    "build-server": "node build.js",
+    "dev": "node dev.js"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
+
